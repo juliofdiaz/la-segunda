@@ -7,7 +7,6 @@ def create_positions_table():
                                  CREATE TABLE Positions (
                                  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                                  position TEXT NOT NULL,
-                                 area TEXT NOT NULL,
                                  unique (position)
                                  ); """
 

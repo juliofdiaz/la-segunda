@@ -1,19 +1,19 @@
 from config import DB_FILE
-from config import START_FOOT
+from config import INITIAL_FOOT
 from util import insert_into_table
 from util import check_insert_into_table
 
 
 def insert_into_foot(value):
 	'''
-	Insert one row in foot table
-	:param value: value to be inserted in foot table
+	Insert one row in Foot table
+	:param value: value to be inserted in Foot table
 	'''
 
 	db_file = DB_FILE
 	sql = "INSERT INTO Foot(foot) VALUES(?)"
 
-	return insert_into_table(db_file, sql, value)
+	return insert_into_table(db_file, sql, (value,))
 
 
 def check_insert_into_foot(value):
@@ -35,11 +35,11 @@ def initial_foot_table_insert():
 	Insert initial rows.
 	'''
 
-	initial_dataset = START_FOOT
+	initial_dataset = INITIAL_FOOT
 
 	for item in initial_dataset:
 		num = insert_into_foot(item)
-		print("[Recorded] id:"+str(num)+"\tfoot:"+item+" INTO Foot TABLE")
+		#		print("[Recorded] id:"+str(num)+"\tfoot:"+item+" INTO Foot TABLE")
 
 if __name__ == '__main__':
 	initial_foot_table_insert()

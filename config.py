@@ -1,8 +1,10 @@
 DB_FILE = "liga2.db"
-START_FOOT = ["left","right","unknown"]
-START_POSITIONS = [("Goalkeeper","Goal"),("Centre-Back","Defense"),
-                   ("Left-Back","Defense"),("Right-Back","Defense"),
-                   ("Defensive Midfield","Midfield"),("Central Midfield","Midfield"),
-                   ("Left Midfield","Midfield"),("Right Midfield","Midfield"),
-                   ("Atacking Midfield","Midfield"),("Right Winger","Atack"),
-                   ("Left Winger","Atack"),("Centre-Forward","Atack")]
+
+INITIAL_FOOT = ["left","right","unknown"]
+INITIAL_POSITIONS = ["Goalkeeper","Centre-Back","Left-Back","Right-Back",
+                     "Defensive Midfield","Central Midfield","Left Midfield",
+                     "Right Midfield","Atacking Midfield","Right Winger",
+                     "Left Winger","Centre-Forward","unknown"]
+INITIAL_COUNTRIES = ["Peru","Argentina","Uruguay","Paraguay","Colombia",
+                     "Venezuela","Ecuador","Brazil","Chile","unknown"]
+INITIAL_CITIES = [("Lima","Peru"), ("Arequipa","Peru"),("Trujillo","Peru"),("unknown","unknown")]

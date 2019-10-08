@@ -46,8 +46,9 @@ def format_name(name_string):
 
 
 def format_height(height_string):
-    return int(height_string.split(" ")[0].replace(',',''))
-
+    numerals = [int(s) for s in re.findall(r'\b\d+\b', height_string)]
+    #return int(height_string.split(" ")[0].replace(',',''))
+    return str(numerals[0]) + str(numerals[1])
 
 def create_connection(db_file):
     """

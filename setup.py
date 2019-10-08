@@ -1,0 +1,21 @@
+from db_setup.create_positions_table import create_positions_table
+from db_setup.create_countries_table import create_countries_table
+from db_setup.create_cities_table import create_cities_table
+from db_setup.create_foot_table import create_foot_table
+
+from db_setup.insert_into_positions import initial_positions_table_insert
+from db_setup.insert_into_countries import initial_countries_table_insert
+from db_setup.insert_into_cities import initial_cities_table_insert
+from db_setup.insert_into_foot import initial_foot_table_insert
+
+# Create tables in database
+create_positions_table()
+create_countries_table()
+create_cities_table()
+create_foot_table()
+
+# Insert initial values in recently created tables
+initial_positions_table_insert()
+initial_countries_table_insert()
+initial_cities_table_insert()
+initial_foot_table_insert()
