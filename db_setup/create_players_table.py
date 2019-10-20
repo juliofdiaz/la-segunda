@@ -1,59 +1,29 @@
-import sqlite3
-from sqlite3 import Error
- 
- 
-def create_connection(db_file):
-    """ create a database connection to the SQLite database
-        specified by db_file
-    :param db_file: database file
-    :return: Connection object or None
-    """
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-        return conn
-    except Error as e:
-        print(e)
- 
-    return conn
- 
- 
-def create_table(conn, create_table_sql):
-    """ create a table from the create_table_sql statement
-    :param conn: Connection object
-    :param create_table_sql: a CREATE TABLE statement
-    :return:
-    """
-    try:
-        c = conn.cursor()
-        c.execute(create_table_sql)
-    except Error as e:
-        print(e)
- 
- 
-def main(db_file):
-    database = r"liga2.db"
- 
-    sql_create_players_table = """ CREATE TABLE IF NOT EXISTS Players (
-                                        id integer PRIMARY KEY,
-                                        first_name TEXT  NOT NULL,
-                                        last_name TEXT NOT NULL,
-                                        dob TEXT,
-                                        position_id INTEGER NOT NULL,
-                                        FOREIGN KEY (position_id) REFERENCES Positions(id)
-                                    ); """
- 
-    # create a database connection
-    conn = create_connection(database)
- 
-    # create tables
-    if conn is not None:
-        # create players table
-        create_table(conn, sql_create_players_table)
- 
-    else:
-        print("Error! cannot create the database connection.")
- 
- 
+from config import DB_FILE
+from util import create_table
+
+def create_players_table():
+    db_file = DB_FILE
+    sql_create_players_table = """
+                               CREATE TABLE Players (
+                               id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                               first_name TEXT NOT NULL,
+                               last_name TEXT NOT NULL,
+                               name_ob TEXT,
+                               city_id TEXT,
+                               citizenship TEXT,
+                               date_ob TEXT,
+                               foot_id TEXT,
+                               height INTEGER,
+                               position_id TEXT,
+                               link TEXT,
+                               FOREIGN KEY (city_id) REFERENCES Cities(id),
+                               FOREIGN KEY (foot_id) REFERENCES Foot(id),
+                               FOREIGN KEY (position_id) REFERENCES Positions(id)
+                               ); """
+
+    create_table(db_file,sql_create_players_table)
+
+
+
 if __name__ == '__main__':
-    main("liga2.db")
+    create_players_table()

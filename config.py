@@ -8,3 +8,4 @@ INITIAL_POSITIONS = ["Goalkeeper","Centre-Back","Left-Back","Right-Back",
 INITIAL_COUNTRIES = ["Peru","Argentina","Uruguay","Paraguay","Colombia",
                      "Venezuela","Ecuador","Brazil","Chile","unknown"]
 INITIAL_CITIES = [("Lima","Peru"), ("Arequipa","Peru"),("Trujillo","Peru"),("unknown","unknown")]
+INITIAL_PLAYERS = [("Leao","Butrón","Leao Butrón Gotuzzo",1,"1","1977-03-06 00:00:00",2,184,1,"")]

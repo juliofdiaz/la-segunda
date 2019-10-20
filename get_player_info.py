@@ -34,10 +34,11 @@ def  get_player_info(url):
     except:
         city_ob, country_ob = "unknown","unknown"
 
-    citizen_items = soup.find_all("th", string=re.compile("Citizenship:"))[0].find_next_siblings()
+    citizen_holder = soup.find_all("th", string=re.compile("Citizenship:"))[0].find_next_siblings()
+    citizen_items = citizen_holder[0].find_all("img", recursive=False)
     citizen = []
     for i in citizen_items:
-        citizen.append(i.text.strip())
+        citizen.append(i['title'])
 
     try:
         height = format_height(soup.find_all("th", string=re.compile("Height:"))[0].findNext("td").text)
@@ -51,8 +52,8 @@ def  get_player_info(url):
 
     return [name_ob, (city_ob,country_ob), citizen, height, foot, transfers]
 
-
-url = "https://www.transfermarkt.co.uk/jorge-molina/profil/spieler/94447"
+url = "https://www.transfermarkt.co.uk/kleiber-palomino/profil/spieler/520959"
+#url = "https://www.transfermarkt.co.uk/jorge-molina/profil/spieler/94447"
 #url = "https://www.transfermarkt.co.uk/daniel-prieto/profil/spieler/217130"
 #url = "https://www.transfermarkt.co.uk/javier-salazar/profil/spieler/94872"
 if __name__ == "__main__":
