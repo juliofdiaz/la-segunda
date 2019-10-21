@@ -23,8 +23,8 @@ def check_multi_foreign(values):
 
 def insert_into_players(value):
 	'''
-	Insert one row in Cities table
-	:param value: value to be inserted in Cities table
+	Insert one row in Players table
+	:param value: value to be inserted in Players table
 	'''
 
 	db_file = DB_FILE

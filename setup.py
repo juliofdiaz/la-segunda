@@ -3,12 +3,16 @@ from db_setup.create_countries_table import create_countries_table
 from db_setup.create_cities_table import create_cities_table
 from db_setup.create_foot_table import create_foot_table
 from db_setup.create_players_table import create_players_table
+from db_setup.create_stadiums_table import create_stadiums_table
+from db_setup.create_clubs_table import create_clubs_table
 
 from db_setup.insert_into_positions import initial_positions_table_insert
 from db_setup.insert_into_countries import initial_countries_table_insert
 from db_setup.insert_into_cities import initial_cities_table_insert
 from db_setup.insert_into_foot import initial_foot_table_insert
 from db_setup.insert_into_players import initial_players_table_insert
+from db_setup.insert_into_stadiums import initial_stadiums_table_insert
+from db_setup.insert_into_clubs import initial_clubs_table_insert
 
 # Create tables in database
 create_positions_table()
@@ -16,6 +20,8 @@ create_countries_table()
 create_cities_table()
 create_foot_table()
 create_players_table()
+create_stadiums_table()
+create_clubs_table()
 
 # Insert initial values in recently created tables
 initial_positions_table_insert()
@@ -23,3 +29,5 @@ initial_countries_table_insert()
 initial_cities_table_insert()
 initial_foot_table_insert()
 initial_players_table_insert()
+initial_stadiums_table_insert()
+initial_clubs_table_insert()
